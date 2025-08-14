@@ -41,8 +41,7 @@ class Item(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
     tags = models.ManyToManyField(Tag)
-    image = models.ImageField(
-        default="", blank=True, upload_to=upload_image_to)
+    image = models.ImageField(default="", blank=True, upload_to=upload_image_to)
     
     def __str__(self):
         return self.name
