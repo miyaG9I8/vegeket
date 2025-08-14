@@ -3,6 +3,7 @@ from base.models import Item, Category, Tag, User, Profile, Order
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from base.forms import UserCreationForm
+from django.utils.safestring import mark_safe
 
 class TagInline(admin.TabularInline):
     model = Item.tags.through

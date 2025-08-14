@@ -1,9 +1,11 @@
-{% extends 'base.html' %} {% block main %}
+{% extends 'base.html' %} 
+
+{% block main %}
 <div class="container">
 	<div class="row my-5">
 		<div class="col-12 col-lg-6">
 			<div class="bg-white border overflow-hidden">
-				<img src="/{{ object.image }}" width="100%" />
+				<img src="/{{ object.image.url }}" width="100%" />  <!--.url追加-->
 			</div>
 		</div>
 		<div class="col-12 col-lg-6">
