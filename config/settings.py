@@ -131,6 +131,8 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles' 
+
 print("------- STATIC DIR : ", STATICFILES_DIRS)
 
 # Default primary key field type
