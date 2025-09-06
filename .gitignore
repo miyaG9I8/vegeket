@@ -3,4 +3,4 @@ secrets/
 __pycache__/
 venv/
 db.sqlite3
-.env      
+.env
