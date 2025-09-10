@@ -43,7 +43,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #boolからstrに変更
-DEBUG = env.str("DEBUG")
+DEBUG = env.bool("DEBUG")  
 #DEBUG=True
 print(DEBUG)
 
@@ -149,9 +149,17 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = BASE_DIR / 'static'  #staticfilesからstaticに変更
+
+#STATICFILES_DIRS = [BASE_DIR / "static"]  #本番用にコメントアウト
+
+#STATIC_ROOT = BASE_DIR / 'staticfiles'  #staticfilesからstaticに変更→staticfilesに戻した（herokuデプロイ時）
 
 #print("------- STATIC DIR : ", STATICFILES_DIRS)
 
